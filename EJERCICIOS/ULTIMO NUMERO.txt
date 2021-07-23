@@ -1,0 +1,96 @@
+archivo a
+cli 1      - open cursor  cusr-movimientos - fetch until fin cursor - close-cursor
+cli45      - open cursor  cusr-movimientos - fetch until fin cursor - close-cursor
+ 
+cli60      - open cursor  cusr-movimientos - fetch until fin cursor - close-cursor
+
+
+
+exec sql
+   declare cusr-movimientos cursor
+       for select (
+	               cliente
+				   ,fecha
+				   ,importe
+				   )
+	   from tabla.movimientos
+	   where 
+	      cliente = :arch-a-cliente
+	   order by
+	      fecha
+end-exec.
+
+
+-------------------------------------------------------------------
+TABLA DE ID'S DE TABLAS. (ID_TABLAS)
+
+CLAVE_TABLA   ID-VALOR-ULTIMO
+VENTAS         00000000101456
+CLIENTE        00093883838883
+PROVEEDORES    00000008938837
+	   
+	  
+PASO 1 DECLARE CURSOR
+
+DECLARE CURSOR CSR-ID-TABLAS WITH HOLD
+    FOR SELECT ID_VALOR_ULTIMO
+   FROM ID_TABLAS  
+  WHERE CLAVE_TABLA = :DCLGEN-CLAVE-TABLA
+    FOR UPDATE ID-VALOR-ULTIMO
+	
+	
+PASO 2 OPEN CURSOR.
+MOVE ´VENTAS´ TO DCLGEN-CLAVE-TABLA.
+
+OPEN CURSOR CSR-ID-TABLAS.
+EVALUAR SQLCODE.
+
+PASO3 LECTURA DE LA FILA DEL CURSOR.
+
+FETCH CSR-ID-TABLAS 
+ INTO :DCLGEN-ID-VALOR-ULTIMO
+EVALUAR SQLCODE.
+
+PASO 4  
+ADD 1 TO DCLGEN-ID-VALOR-ULTIMO = 101457
+
+SE UTILIZA DCLGEN-ID-VALOR-ULTIMO PARA EL INSERT DE LA FILA EN LA TABLA CORRESPONDIENTE
+EVALUAR EL SQLCODE DEL INSERT
+
+SI ES OK
+ENTONCES PASO 5
+UPDATE ID_TABLAS
+   SET ID_VALOR_ULTIMO = :DCLGEN-ID-VALOR-ULTIMO
+   WHERE CURRENT OF CURSOR
+EVALUAR SQLCODE Y SI ES CORRECTO HACER
+SQL COMMIT. 
+
+PASO 6
+CLOSE CURSOR.
+EVALUAR SQLCODE.  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

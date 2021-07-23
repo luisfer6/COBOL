@@ -1,0 +1,31 @@
+C         0         0         0         0         0         0         0         0         0         1         1         1         1         1         1         1         1         1         1         2         2         2         2
+C         1         2         3         4         5         6         7         8         9         0         1         2         3         4         5         6         7         8         9         0         1         2         3
+012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+-FECHA: XX/XX/XXXX                                                                     LISTADO DE NOVEDADES A CLIENTES                                                                     HOJA: ZZ.ZZZ
+ HORA : HH:MM                                                                          *******************************
+
+ ID CLIENTE TN CPO DESCRIPCION CAMPO    VALOR NUEVO                                        VALOR ANTERIOR                                     MENSAJE
+ ---------- -- --- -------------------- -------------------------------------------------- -------------------------------------------------- ---------------------------------------------------------
+ ZZZZZZZZZZ  X  99 12345678901234567890 12345678901234567890123456789012345678901234567890 12345678901234567890123456789012345678901234567890 123456789012345678901234567890123456789012345678901234567
+
+
+              ERRORES: * CLIENTE NO NUMERICO
+                       * COD. TIPO NOVEDAD INVALIDO (A,B,M,D)
+                       * COD. CAMPO NOVEDAD NO INFORMADO
+                       * COD. CAMPO NOVEDAD DEBE SER NUMERICO 01 A 12
+                       * COD. CAMPO NOVEDAD DEBE SER 01 A 12
+                       * ALTAS INF. CAMPO 01 LAST-NAME
+                       * INFORMAR CAMPO DATO
+                       * ALTA DE CLIENTE EXISTENTE
+                       * BAJA DE CLIENTE INEXISTENTE
+                       * MODIF. DE CLIENTE INEXISTENTE
+                       * ALTA DE CLIENTE EFECTUADA
+                       * MODIFICACION EFECTUADA
+                       * BAJA LOGICA EFECTUADA
+                       * BAJA FISICA EFECTUADA
+
+
+
+
+
+
